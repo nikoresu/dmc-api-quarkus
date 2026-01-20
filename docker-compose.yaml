@@ -1,0 +1,12 @@
+services:
+  couchbase-dmc:
+    image: couchbase/server:enterprise
+    ports:
+      - "9091-9096:9091-9096"
+      - "11210-11211:11210-11211"
+    volumes:
+      - couchbase-dmc-data:/opt/couchbase/var
+      - ./couchbase_static_config:/opt/couchbase/etc/couchbase/static_config:ro
+
+volumes:
+  couchbase-dmc-data:

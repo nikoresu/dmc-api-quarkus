@@ -1,0 +1,15 @@
+quarkus:
+  http:
+    port: 41005
+
+couchbase:
+    connection:
+      url: ${COUCHBASE_URL}
+      username: ${COUCHBASE_USERNAME}
+      password: ${COUCHBASE_PASSWORD}
+      bucketName: ${COUCHBASE_BUCKET_NAME}
+
+    dmc:
+      bucketName: ${COUCHBASE_DMC_BUCKET_NAME}
+      bucketScope: ${COUCHBASE_DMC_BUCKET_SCOPE}
+      bucketCollection: ${COUCHBASE_DMC_BUCKET_COLLECTION}
