@@ -6,7 +6,7 @@ services:
       - "11210-11211:11210-11211"
     volumes:
       - couchbase-dmc-data:/opt/couchbase/var
-      - ./couchbase_static_config:/opt/couchbase/etc/couchbase/static_config:ro
+      - ./couchbase_static_config:/opt/couchbase/etc/couchbase/static_config:z
 
 volumes:
   couchbase-dmc-data:
