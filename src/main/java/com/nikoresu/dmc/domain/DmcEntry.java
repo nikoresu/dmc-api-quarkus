@@ -1,29 +1,35 @@
 package com.nikoresu.dmc.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"id"})
 public class DmcEntry {
-    @JsonProperty("id")
-    private String id;
+    private String number;
 
-    @JsonProperty("code")
-    private String code;
+    private String baseName;
+    private String variation;
 
-    @JsonProperty("description")
-    private String description;
+    private int red;
+    private int green;
+    private int blue;
 
-    @JsonProperty("thread_color")
-    private String threadColor;
+    private String hex;
 
-    @JsonProperty("created_at")
-    private Long createdAt;  // Epoch time in milliseconds
+    @Builder.Default
+    private List<String> similars = new ArrayList<>();
 
-    @JsonProperty("updated_at")
-    private Long updatedAt;  // Epoch time in milliseconds
+    private Long createdAt;
+    private Long updatedAt;
 }

@@ -6,8 +6,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,7 +23,7 @@ public class DmcEntryService {
     public DmcEntry create(DmcEntry entry) {
         entry.setCreatedAt(System.currentTimeMillis());
         entry.setUpdatedAt(System.currentTimeMillis());
-        repository.save(entry.getId(), entry);
+        repository.save(entry.getNumber(), entry);
         return entry;
     }
 
@@ -33,7 +31,7 @@ public class DmcEntryService {
         Optional<DmcEntry> existing = repository.findById(id);
 
         if (existing.isPresent()) {
-            entry.setId(id);
+            entry.setNumber(id);
             entry.setCreatedAt(existing.get().getCreatedAt());
             entry.setUpdatedAt(System.currentTimeMillis());
             repository.save(id, entry);

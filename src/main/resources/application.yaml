@@ -15,3 +15,4 @@ couchbase:
     bucketName: ${COUCHBASE_DMC_BUCKET_NAME}
     bucketScope: ${COUCHBASE_DMC_BUCKET_SCOPE}
     bucketCollection: ${COUCHBASE_DMC_BUCKET_COLLECTION}
+    csvDataFile: "dmc-floss.csv"
